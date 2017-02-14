@@ -1,6 +1,0 @@
-c:\users\daniel.bainbridge\documents\visual studio 2015\Projects\paperScissorsRock\paperScissorsRock\bin\Debug\paperScissorsRock.exe.config
-c:\users\daniel.bainbridge\documents\visual studio 2015\Projects\paperScissorsRock\paperScissorsRock\bin\Debug\paperScissorsRock.exe
-c:\users\daniel.bainbridge\documents\visual studio 2015\Projects\paperScissorsRock\paperScissorsRock\bin\Debug\paperScissorsRock.pdb
-c:\users\daniel.bainbridge\documents\visual studio 2015\Projects\paperScissorsRock\paperScissorsRock\obj\Debug\paperScissorsRock.csprojResolveAssemblyReference.cache
-c:\users\daniel.bainbridge\documents\visual studio 2015\Projects\paperScissorsRock\paperScissorsRock\obj\Debug\paperScissorsRock.exe
-c:\users\daniel.bainbridge\documents\visual studio 2015\Projects\paperScissorsRock\paperScissorsRock\obj\Debug\paperScissorsRock.pdb
