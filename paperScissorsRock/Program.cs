@@ -4,13 +4,16 @@ namespace NinjaPirateViking
 {
     public class Program
     {
+        public const string Viking = "Viking";
+        public const string Ninja = "Ninja";
+        public const string Pirate = "Pirate";
         //Global variables defaulted to a valid selection for user and pc.
-        private static string userSelection = "Viking";
-        private static string pcSelection = "Viking";
+        public static string userSelection = Viking;
+        public static string pcSelection = Viking;
         
         //Global variables for keeping score of games
         public static int Tie = 0;
-        private static int Win = 0;
+        public static int Win = 0;
         private static int Total = 0;
         private static int Loss = 0;
 
@@ -30,15 +33,16 @@ namespace NinjaPirateViking
                 //Generate pc input
                 PcSelection();
                 //work out who won
-                PlayGame();
+                PlayGame(userSelection, pcSelection);
                 //ask user if they want to play again
                 Console.WriteLine("Would you like to play again y/n");
               //detect y to play again, anything else quits out           
             } while (Console.ReadLine() == "y");
         }
 
-        public static void PlayGame()
+        public static void PlayGame(string userSelection, string pcSelection)
         {
+
             //Evaluate Who Won
             //If the two selections are equal its a draw, thus increment the relevant counters
             if (userSelection == pcSelection)
@@ -48,18 +52,18 @@ namespace NinjaPirateViking
             }
             //These are three win scenarios for user. Must be a way to make this look better, 
             //but I don't know what it is.
-            else if (userSelection == "Ninja" && pcSelection == "Viking" ||
-                     userSelection == "Viking" && pcSelection == "Pirate" ||
-                     userSelection == "Pirate" && pcSelection == "Ninja")
+            else if (userSelection == Ninja && pcSelection == Viking ||
+                     userSelection == Viking && pcSelection == Pirate ||
+                     userSelection == Pirate && pcSelection == Ninja)
             {
                 Win = Win + 1;
                 Total = Total + 1;
             }
             //These are the loss scenarios. In theory this could just be else as we have tie and
             //win covered, but better to explicity say. Unless it isn't then we can change this.
-            else if (pcSelection == "Ninja" && userSelection == "Viking" ||
-                     pcSelection == "Viking" && userSelection == "Pirate" ||
-                     pcSelection == "Pirate" && userSelection == "Ninja")
+            else if (pcSelection == Ninja && userSelection == Viking ||
+                     pcSelection == Viking && userSelection == Pirate ||
+                     pcSelection == Pirate && userSelection == Ninja)
             {
                 Loss = Loss + 1;
                 Total = Total + 1;
@@ -86,27 +90,27 @@ namespace NinjaPirateViking
             //Case select for user inputs. Sets the user input or errors out, sort of.
             switch (selection)
             {
-                case "Ninja":
+                case Ninja:
                     Console.WriteLine("You have chosen: " + selection);
                     break;
                 case "n":
-                    selection = "Ninja";
+                    selection = Ninja;
                     Console.WriteLine("You have chosen: " + selection);
                     break;
-                case "Pirate":
+                case Pirate:
                     Console.WriteLine("You have chosen: " + selection);
                     break;
                 case "p":
-                    selection = "Pirate";
+                    selection = Pirate;
                     Console.WriteLine("You have chosen: " + selection);
                     break;
-                case "Viking":
+                case Viking:
                     Console.WriteLine("You have chosen: " + selection);
                     break;
                 case "vpy" +
                      "ypy" +
                      "":
-                    selection = "Viking";
+                    selection = Viking;
                     Console.WriteLine("You have chosen: " + selection);
                     break;
                 default:
@@ -125,21 +129,21 @@ namespace NinjaPirateViking
             int choice = rnd.Next(1, 4);
 
             //defaultthe selection to Viking, obvs.
-            string selection = "Viking";
+            string selection = Viking;
 
             //choose a "weapon" depending on the random number above
             switch (choice)
             {
                 case 1:
-                    selection = "Pirate";
+                    selection = Pirate;
                     Console.WriteLine("I have chosen: " + selection);
                     break;
                 case 2:
-                    selection = "Ninja";
+                    selection = Ninja;
                     Console.WriteLine("I have chosen: " + selection);
                     break;
                 case 3:
-                    selection = "Viking";
+                    selection = Viking;
                     Console.WriteLine("I have chosen: " + selection);
                     break;
                 default:
