@@ -15,7 +15,7 @@ namespace NinjaPirateViking
         public static int Tie = 0;
         public static int Win = 0;
         private static int Total = 0;
-        private static int Loss = 0;
+        public static int Loss = 0;
 
         static void Main(string[] args)
         {

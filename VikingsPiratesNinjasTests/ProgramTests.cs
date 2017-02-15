@@ -62,5 +62,32 @@ namespace VikingsPiratesNinjasTests
             Assert.AreEqual(winsBefore + 1, Program.Win);
         }
 
+        [TestMethod]
+        public void TestForUserLossWhenUserPiratePlaysPcViking()
+        {
+            var lossBefore = Program.Loss;
+
+            Program.PlayGame(Program.Pirate, Program.Viking);
+            Assert.AreEqual(lossBefore + 1, Program.Loss);
+        }
+
+        [TestMethod]
+        public void TestForUserLossWhenUserNinjaPlaysPcPirate()
+        {
+            var lossBefore = Program.Loss;
+
+            Program.PlayGame(Program.Ninja, Program.Pirate);
+            Assert.AreEqual(lossBefore + 1, Program.Loss);
+        }
+
+        [TestMethod]
+        public void TestForUserLossWhenUserVikingPlaysPcNinja()
+        {
+            var lossBefore = Program.Loss;
+
+            Program.PlayGame(Program.Viking, Program.Ninja);
+            Assert.AreEqual(lossBefore + 1, Program.Loss);
+        }
+
     }
 }
