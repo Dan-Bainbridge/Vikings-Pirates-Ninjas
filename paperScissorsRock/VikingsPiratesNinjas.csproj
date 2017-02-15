@@ -7,8 +7,8 @@
     <ProjectGuid>{CF04CA6E-64A0-4BBA-993E-CF45C896DB45}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>paperScissorsRock</RootNamespace>
-    <AssemblyName>paperScissorsRock</AssemblyName>
+    <RootNamespace>VikingsPiratesNinjas</RootNamespace>
+    <AssemblyName>VikingsPiratesNinjas</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

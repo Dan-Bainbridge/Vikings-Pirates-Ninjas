@@ -2,14 +2,14 @@
 
 namespace NinjaPirateViking
 {
-    class Program
+    public class Program
     {
         //Global variables defaulted to a valid selection for user and pc.
         private static string userSelection = "Viking";
         private static string pcSelection = "Viking";
         
         //Global variables for keeping score of games
-        private static int Tie = 0;
+        public static int Tie = 0;
         private static int Win = 0;
         private static int Total = 0;
         private static int Loss = 0;
@@ -37,7 +37,7 @@ namespace NinjaPirateViking
             } while (Console.ReadLine() == "y");
         }
 
-        private static void PlayGame()
+        public static void PlayGame()
         {
             //Evaluate Who Won
             //If the two selections are equal its a draw, thus increment the relevant counters
