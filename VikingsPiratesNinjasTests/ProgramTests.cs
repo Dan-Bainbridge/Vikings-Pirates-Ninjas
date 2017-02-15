@@ -13,9 +13,7 @@ namespace VikingsPiratesNinjasTests
         {
             var tiesBefore = Program.Tie;
 
-            Program.PlayGame();
-            Program.userSelection = "Pirates";
-            Program.pcSelection = "Pirates";
+            Program.PlayGame(Program.Pirate, Program.Pirate);
             Assert.AreEqual(tiesBefore + 1, Program.Tie);
         }
 
@@ -24,9 +22,7 @@ namespace VikingsPiratesNinjasTests
         {
             var tiesBefore = Program.Tie;
 
-            Program.PlayGame();
-            Program.userSelection = "Ninjas";
-            Program.pcSelection = "Ninjas";
+            Program.PlayGame(Program.Ninja, Program.Ninja);
             Assert.AreEqual(tiesBefore + 1, Program.Tie);
         }
 
@@ -35,11 +31,35 @@ namespace VikingsPiratesNinjasTests
         {
             var tiesBefore = Program.Tie;
 
-            Assert.AreEqual("Viking", Program.userSelection);
-            Assert.AreEqual("Viking", Program.pcSelection);
-
-            Program.PlayGame();
+            Program.PlayGame(Program.Viking, Program.Viking);
             Assert.AreEqual(tiesBefore + 1,Program.Tie);
+        }
+
+        [TestMethod]
+        public void TestForUserWinWhenUserVikingPlaysPcPirate()
+        {
+            var winsBefore = Program.Win;
+
+            Program.PlayGame(Program.Viking, Program.Pirate);
+            Assert.AreEqual(winsBefore + 1, Program.Win);
+        }
+
+        [TestMethod]
+        public void TestForUserWinWhenUserPiratePlaysPcNinja()
+        {
+            var winsBefore = Program.Win;
+
+            Program.PlayGame(Program.Pirate, Program.Ninja);
+            Assert.AreEqual(winsBefore + 1, Program.Win);
+        }
+
+        [TestMethod]
+        public void TestForUserWinWhenUserNinjaPlaysPcViking()
+        {
+            var winsBefore = Program.Win;
+
+            Program.PlayGame(Program.Ninja, Program.Viking);
+            Assert.AreEqual(winsBefore + 1, Program.Win);
         }
 
     }
