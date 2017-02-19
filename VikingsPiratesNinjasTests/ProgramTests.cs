@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NinjaPirateViking;
+using VikingsPiratesNinjas;
 
 namespace VikingsPiratesNinjasTests
 {
@@ -13,7 +13,7 @@ namespace VikingsPiratesNinjasTests
         {
             var tiesBefore = Program.Tie;
 
-            Program.PlayGame(Program.Pirate, Program.Pirate);
+            //Program.PlayGame(Program.Pirate, Program.Pirate);
             Assert.AreEqual(tiesBefore + 1, Program.Tie);
         }
 
@@ -22,7 +22,7 @@ namespace VikingsPiratesNinjasTests
         {
             var tiesBefore = Program.Tie;
 
-            Program.PlayGame(Program.Ninja, Program.Ninja);
+            //Program.PlayGame(Program.Ninja, Program.Ninja);
             Assert.AreEqual(tiesBefore + 1, Program.Tie);
         }
 
@@ -31,7 +31,7 @@ namespace VikingsPiratesNinjasTests
         {
             var tiesBefore = Program.Tie;
 
-            Program.PlayGame(Program.Viking, Program.Viking);
+            //Program.PlayGame(Program.Viking, Program.Viking);
             Assert.AreEqual(tiesBefore + 1,Program.Tie);
         }
 
@@ -40,7 +40,7 @@ namespace VikingsPiratesNinjasTests
         {
             var winsBefore = Program.Win;
 
-            Program.PlayGame(Program.Viking, Program.Pirate);
+            //Program.PlayGame(Program.Viking, Program.Pirate);
             Assert.AreEqual(winsBefore + 1, Program.Win);
         }
 
@@ -49,7 +49,7 @@ namespace VikingsPiratesNinjasTests
         {
             var winsBefore = Program.Win;
 
-            Program.PlayGame(Program.Pirate, Program.Ninja);
+            //Program.PlayGame(Program.Pirate, Program.Ninja);
             Assert.AreEqual(winsBefore + 1, Program.Win);
         }
 
@@ -58,7 +58,7 @@ namespace VikingsPiratesNinjasTests
         {
             var winsBefore = Program.Win;
 
-            Program.PlayGame(Program.Ninja, Program.Viking);
+            //Program.PlayGame(Program.Ninja, Program.Viking);
             Assert.AreEqual(winsBefore + 1, Program.Win);
         }
 
@@ -67,7 +67,7 @@ namespace VikingsPiratesNinjasTests
         {
             var lossBefore = Program.Loss;
 
-            Program.PlayGame(Program.Pirate, Program.Viking);
+            //Program.PlayGame(Program.Pirate, Program.Viking);
             Assert.AreEqual(lossBefore + 1, Program.Loss);
         }
 
@@ -76,7 +76,7 @@ namespace VikingsPiratesNinjasTests
         {
             var lossBefore = Program.Loss;
 
-            Program.PlayGame(Program.Ninja, Program.Pirate);
+            //Program.PlayGame(Program.Ninja, Program.Pirate);
             Assert.AreEqual(lossBefore + 1, Program.Loss);
         }
 
@@ -85,7 +85,7 @@ namespace VikingsPiratesNinjasTests
         {
             var lossBefore = Program.Loss;
 
-            Program.PlayGame(Program.Viking, Program.Ninja);
+            //Program.PlayGame(Program.Viking, Program.Ninja);
             Assert.AreEqual(lossBefore + 1, Program.Loss);
         }
 
