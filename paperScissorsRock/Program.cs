@@ -1,11 +1,20 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace VikingsPiratesNinjas
 {
+
     public class Program
     {
+        //This took me 45 fucking minutes, this better be right.
+        private static Counter GameCounter;
+
         static void Main(string[] args)
         {
+            //Had to do this so checkResult didn't need to be static. Totes confused.
+            var newGame = new Program();
+            GameCounter = new Counter();
+
             string exit;
             do
             {
@@ -18,31 +27,25 @@ namespace VikingsPiratesNinjas
 
             ////Initiate PlayGame object
             var game = new PlayGame();
-            var outcome = game.GameOutcome(input1, input2);   
-            CheckResult(outcome);
+            var outcome = game.GameOutcome(input1, input2);
+
+            newGame.CheckResult(outcome);
             exit = Console.ReadLine();
             } while (exit != "exit");
         }
 
-
-        private static void GetUserInput()
+        private void CheckResult(string outcome)
         {
-            
-        }
-        private static void CheckResult(string outcome)
-        {
-            var counter = new Counter();
             switch (outcome)
             {
                 case "Win":
-                    counter.Win(outcome);
-
+                    GameCounter.Win(outcome);
                     break;
                 case "Loss":
-                    counter.Loss(outcome);
+                    GameCounter.Loss(outcome);
                     break;
                 case "Tie":
-                    counter.Tie(outcome);
+                    GameCounter.Tie(outcome);
                     break;
             }
         }
