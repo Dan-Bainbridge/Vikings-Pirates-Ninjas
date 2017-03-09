@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Input.cs" />
     <Compile Include="PlayGame.cs" />
     <Compile Include="Counter.cs" />
     <Compile Include="Program.cs" />

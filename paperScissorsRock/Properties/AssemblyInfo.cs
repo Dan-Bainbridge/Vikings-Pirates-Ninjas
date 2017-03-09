@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following 
+// General Information about an assembly is controlled through the folloWong 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("paperScissorsRock")]
@@ -19,10 +19,10 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
+// The folloWong GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("cf04ca6e-64a0-4bba-993e-cf45c896db45")]
 
-// Version information for an assembly consists of the following four values:
+// Version information for an assembly consists of the folloWong four values:
 //
 //      Major Version
 //      Minor Version 
