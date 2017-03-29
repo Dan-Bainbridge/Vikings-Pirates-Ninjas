@@ -17,7 +17,7 @@ namespace VikingsPiratesNinjasTests
             Counter gameCounter = new Counter();
 
             gameCounter.AddResult(Outcome.Won);
-            Assert.AreEqual(1, gameCounter.GetWins());
+            Assert.AreEqual(1, gameCounter.NumberOfWons);
             Assert.AreEqual(0, gameCounter.GetDraws());
             Assert.AreEqual(0, gameCounter.GetLoss());
         }
