@@ -20,27 +20,18 @@ namespace VikingsPiratesNinjas
 
                 var userSelection = game.UserSelection();
                 selection = userSelection;
-                if (selection == "exit" || selection == "Exit")
+                if (selection.ToLower() == "exit")
                 {
                     break;
                 }
+
                 Console.WriteLine("You have chosen: " + userSelection);
                 var pcSelection = game.PcSelection();
                 Console.WriteLine("The pc chose: " + pcSelection);
                 string outcome = game.GameOutcome(userSelection, pcSelection);
 
-                if (outcome == "Won")
-                {
-                    gameCounter.Won(outcome);
-                }
-                else if (outcome == "Drew")
-                {
-                    gameCounter.Tie(outcome);
-                }
-                else if (outcome == "Lost")
-                {
-                    gameCounter.Lost(outcome);
-                }
+                gameCounter.AddResult(outcome);
+
                 Console.WriteLine("You " + outcome);
             } while (selection != "exit");
         }

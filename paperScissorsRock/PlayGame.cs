@@ -2,6 +2,12 @@
 
 namespace VikingsPiratesNinjas
 {
+    public enum Outcome
+    {
+        Drew,
+        Won,
+        Lost
+    }
     public class PlayGame
     {
         public const string Viking = "Viking";
