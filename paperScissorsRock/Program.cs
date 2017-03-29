@@ -28,7 +28,7 @@ namespace VikingsPiratesNinjas
                 Console.WriteLine("You have chosen: " + userSelection);
                 var pcSelection = game.PcSelection();
                 Console.WriteLine("The pc chose: " + pcSelection);
-                string outcome = game.GameOutcome(userSelection, pcSelection);
+                Outcome outcome = game.GameOutcome(userSelection, pcSelection);
 
                 gameCounter.AddResult(outcome);
 
