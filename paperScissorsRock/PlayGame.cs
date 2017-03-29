@@ -8,37 +8,92 @@ namespace VikingsPiratesNinjas
 {
     public class PlayGame
     {
-        public static string outcome = "";
+        public const string Viking = "Viking";
+        public const string Ninja = "Ninja";
+        public const string Pirate = "Pirate";
+        public const string Exit = "Exit";
 
-        //Should these variables be named the same? 
-        //I think so and I don't see a good reason why not, but ........
+        public string UserSelection()
+        {
+            string selection = Console.ReadLine();
+
+            switch (selection)
+            {
+                case Ninja:
+                    break;
+                case "n":
+                    selection = Ninja;
+                    break;
+                case Pirate:
+                    break;
+                case "p":
+                    selection = Pirate;
+                    break;
+                case Viking:
+                    break;
+                case "v":
+                    selection = Viking;
+                    break;
+                case "e":
+                    selection = Exit;
+                    break;
+                case Exit:
+                    selection = Exit;
+                    break;
+                default:
+                    break;
+
+            }
+            return selection;
+        }
+
+        public string PcSelection()
+        {
+            Random rnd = new Random();
+            int choice = rnd.Next(1, 4);
+
+            string selection = "viking";
+
+            switch (choice)
+            {
+                case 1:
+                    selection = Pirate;
+                    break;
+                case 2:
+                    selection = Ninja;
+                    break;
+                case 3:
+                    selection = Viking;
+                    break;
+                default:
+                    break;
+            }
+            return selection;
+        }
         public string GameOutcome(string userSelection, string pcSelection)
         {
-            //do the game logic
+            var Outcome = "";
+
             if (userSelection == pcSelection)
             {
-                //Add logic in the event of a Tie
-                outcome = "Tie";
-                return outcome;
+                Outcome = "Drew";
+                return Outcome;
             }
-            else if (userSelection == "Ninja" && pcSelection == "Viking" ||
-                     userSelection == "Viking" && pcSelection == "Pirate" ||
-                     userSelection == "Pirate" && pcSelection == "Ninja")
+            if (userSelection == "Ninja" && pcSelection == "Viking" ||
+                userSelection == "Viking" && pcSelection == "Pirate" ||
+                userSelection == "Pirate" && pcSelection == "Ninja")
             {
-                //Add logic in the event of a Win
-                outcome = "Win";
-                return outcome;
+                Outcome = "Won";
+                return Outcome;
             }
-            else if (pcSelection == "Ninja" && userSelection == "Viking" ||
-                     pcSelection == "Viking" && userSelection == "Pirate" ||
-                     pcSelection == "Pirate" && userSelection == "Ninja")
+            if (pcSelection == "Ninja" && userSelection == "Viking" ||
+                pcSelection == "Viking" && userSelection == "Pirate" ||
+                pcSelection == "Pirate" && userSelection == "Ninja")
             {
-                //Add logic in the event of a Loss
-                //Just return Loss?
-                outcome = "Loss";
-                return outcome;
+                Outcome = "Lost";
+                return Outcome;
             }
-            return outcome;
+            return Outcome;
         }
     }
 }

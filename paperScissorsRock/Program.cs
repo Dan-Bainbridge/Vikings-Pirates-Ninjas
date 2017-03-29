@@ -6,48 +6,43 @@ namespace VikingsPiratesNinjas
 
     public class Program
     {
-        //This took me 45 fucking minutes, this better be right.
-        private static Counter GameCounter;
-
         static void Main(string[] args)
         {
-            //Had to do this so checkResult didn't need to be static. Totes confused.
-            var newGame = new Program();
-            GameCounter = new Counter();
+            Counter gameCounter = new Counter();
+            Console.WriteLine("Please enter Viking(v)/Ninja(n)/Pirate(p) or Exit \r\n");
 
-            string exit;
+            string selection;
             do
             {
-            //Initiate Input Object
-            var getInput = new Input();
-            //Get User input    
-            var input1 = getInput.UserSelection();
-            //Generate pc input
-            var input2 = getInput.PcSelection();
+                PlayGame game = new PlayGame();
 
-            ////Initiate PlayGame object
-            var game = new PlayGame();
-            var outcome = game.GameOutcome(input1, input2);
+                Console.WriteLine("Please make a selection:");
 
-            newGame.CheckResult(outcome);
-            exit = Console.ReadLine();
-            } while (exit != "exit");
-        }
+                var userSelection = game.UserSelection();
+                selection = userSelection;
+                if (selection == "exit" || selection == "Exit")
+                {
+                    break;
+                }
+                Console.WriteLine("You have chosen: " + userSelection);
+                var pcSelection = game.PcSelection();
+                Console.WriteLine("The pc chose: " + pcSelection);
+                string outcome = game.GameOutcome(userSelection, pcSelection);
 
-        private void CheckResult(string outcome)
-        {
-            switch (outcome)
-            {
-                case "Win":
-                    GameCounter.Win(outcome);
-                    break;
-                case "Loss":
-                    GameCounter.Loss(outcome);
-                    break;
-                case "Tie":
-                    GameCounter.Tie(outcome);
-                    break;
-            }
+                if (outcome == "Won")
+                {
+                    gameCounter.Won(outcome);
+                }
+                else if (outcome == "Drew")
+                {
+                    gameCounter.Tie(outcome);
+                }
+                else if (outcome == "Lost")
+                {
+                    gameCounter.Lost(outcome);
+                }
+                Console.WriteLine("You " + outcome);
+            } while (selection != "exit");
         }
     }
 }

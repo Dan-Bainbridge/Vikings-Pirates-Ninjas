@@ -8,29 +8,26 @@ namespace VikingsPiratesNinjas
 {
     public class Counter
     {
-        private int NumberOfWins;
-        private int NumberOfLosses;
-        private int NumberOfTies;
+        private int _numberOfWons;
+        private int _numberOfLostes;
+        private int _numberOfTies;
 
-        public int Win(string outcome)
+        public int Won(string outcome)
         {
-            NumberOfWins = NumberOfWins + 1;
-            Console.Out.WriteLine("numberOfWins: " + NumberOfWins);
-            return NumberOfWins;
+            _numberOfWons = _numberOfWons + 1;
+            return _numberOfWons;
         }
 
-        public int Loss(string outcome)
+        public int Lost(string outcome)
         {
-            NumberOfLosses = NumberOfLosses + 1;
-            Console.Out.WriteLine("numberOfLosses: " + NumberOfLosses);
-            return NumberOfLosses;
+            _numberOfLostes = _numberOfLostes + 1;
+            return _numberOfLostes;
         }
 
         public int Tie(string outcome)
         {
-            NumberOfTies = NumberOfTies + 1;
-            Console.Out.WriteLine("numberOfTies: " + NumberOfTies);
-            return NumberOfTies;
+            _numberOfTies = _numberOfTies + 1;
+            return _numberOfTies;
         }
     }
 }
