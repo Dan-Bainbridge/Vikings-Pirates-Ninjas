@@ -12,17 +12,17 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Pirate", "Pirate");
-            Assert.AreEqual("Tie", game.GameOutcome.Outcome);
+            var result = game.GameOutcome(PlayGame.Pirate, PlayGame.Pirate);
+            Assert.AreEqual(Outcome.Drew, result);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void TestForTieWhenBothPlayersHaveNinja()
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Ninja", "Ninja");
-            Assert.AreEqual("Tie", game.Outcome);
+            var result = game.GameOutcome(PlayGame.Ninja, PlayGame.Ninja);
+            Assert.AreEqual(Outcome.Drew, result);
         }
 
         [TestMethod]
@@ -30,8 +30,8 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Viking", "Viking");
-            Assert.AreEqual("Tie", game.Outcome);
+            var result = game.GameOutcome(PlayGame.Viking, PlayGame.Viking);
+            Assert.AreEqual(Outcome.Drew, result);
         }
 
         [TestMethod]
@@ -39,8 +39,8 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Viking", "Pirate");
-            Assert.AreEqual("Win", game.Outcome);
+            var result = game.GameOutcome(PlayGame.Viking, PlayGame.Pirate);
+            Assert.AreEqual(Outcome.Won, result);
         }
 
         [TestMethod]
@@ -48,8 +48,8 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Pirate", "Ninja");
-            Assert.AreEqual("Win", game.Outcome);
+            var result = game.GameOutcome(PlayGame.Pirate, PlayGame.Ninja);
+            Assert.AreEqual(Outcome.Won, result);
         }
 
         [TestMethod]
@@ -57,8 +57,8 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Ninja", "Viking");
-            Assert.AreEqual("Win", game.Outcome);
+            var result = game.GameOutcome(PlayGame.Ninja, PlayGame.Viking);
+            Assert.AreEqual(Outcome.Won, result);
         }
 
         [TestMethod]
@@ -66,8 +66,8 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Pirate", "Viking");
-            Assert.AreEqual("Loss", game.Outcome);
+            var result = game.GameOutcome(PlayGame.Pirate, PlayGame.Viking);
+            Assert.AreEqual(Outcome.Lost, result);
         }
 
         [TestMethod]
@@ -75,8 +75,8 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Ninja", "Pirate");
-            Assert.AreEqual("Loss", game.Outcome);
+            var result = game.GameOutcome(PlayGame.Ninja, PlayGame.Pirate);
+            Assert.AreEqual(Outcome.Lost, result);
         }
 
         [TestMethod]
@@ -84,8 +84,8 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            game.GameOutcome("Viking", "Ninja");
-            Assert.AreEqual("Loss", game.Outcome);
-        }*/
+            var result = game.GameOutcome(PlayGame.Viking, PlayGame.Ninja);
+            Assert.AreEqual(Outcome.Lost, result);
+        }
     }
 }
