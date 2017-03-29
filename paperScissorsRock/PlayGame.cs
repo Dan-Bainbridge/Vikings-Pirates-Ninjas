@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VikingsPiratesNinjas
 {
@@ -52,7 +48,7 @@ namespace VikingsPiratesNinjas
             Random rnd = new Random();
             int choice = rnd.Next(1, 4);
 
-            string selection = "viking";
+            string selection = Viking;
 
             switch (choice)
             {
@@ -70,30 +66,20 @@ namespace VikingsPiratesNinjas
             }
             return selection;
         }
-        public string GameOutcome(string userSelection, string pcSelection)
+        public Outcome GameOutcome(string userSelection, string pcSelection)
         {
-            var Outcome = "";
 
             if (userSelection == pcSelection)
             {
-                Outcome = "Drew";
-                return Outcome;
+                return Outcome.Drew;
             }
-            if (userSelection == "Ninja" && pcSelection == "Viking" ||
-                userSelection == "Viking" && pcSelection == "Pirate" ||
-                userSelection == "Pirate" && pcSelection == "Ninja")
+            if (userSelection == Ninja && pcSelection == Viking ||
+                userSelection == Viking && pcSelection == Pirate ||
+                userSelection == Pirate && pcSelection == Ninja)
             {
-                Outcome = "Won";
-                return Outcome;
+                return Outcome.Won;
             }
-            if (pcSelection == "Ninja" && userSelection == "Viking" ||
-                pcSelection == "Viking" && userSelection == "Pirate" ||
-                pcSelection == "Pirate" && userSelection == "Ninja")
-            {
-                Outcome = "Lost";
-                return Outcome;
-            }
-            return Outcome;
+            return Outcome.Lost;
         }
     }
 }
