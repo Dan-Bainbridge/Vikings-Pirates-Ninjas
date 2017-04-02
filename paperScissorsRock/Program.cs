@@ -3,7 +3,6 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace VikingsPiratesNinjas
 {
-
     public class Program
     {
         static void Main(string[] args)
@@ -11,29 +10,19 @@ namespace VikingsPiratesNinjas
             Counter gameCounter = new Counter();
             Console.WriteLine("Please enter Viking(v)/Ninja(n)/Pirate(p) or Exit \r\n");
 
-            string selection;
-            do
-            {
-                PlayGame game = new PlayGame();
+            PlayGame game = new PlayGame();
 
-                Console.WriteLine("Please make a selection:");
+            Console.WriteLine("Please make a selection:");
 
-                var userSelection = game.UserSelection();
-                selection = userSelection;
-                if (selection.ToLower() == "exit")
-                {
-                    break;
-                }
-
-                Console.WriteLine("You have chosen: " + userSelection);
-                var pcSelection = game.PcSelection();
-                Console.WriteLine("The pc chose: " + pcSelection);
-                Outcome outcome = game.GameOutcome(userSelection, pcSelection);
-
-                gameCounter.AddResult(outcome);
-
-                Console.WriteLine("You " + outcome);
-            } while (selection != "exit");
+            Selection p1Selection = game.PlayerSelection();
+            Selection p2Selection = game.PcSelection();
+            Console.WriteLine("You have chosen: " + p1Selection);
+            Console.WriteLine("The pc chose: " + p2Selection);
+            Outcome outcome = game.GameOutcome(p1Selection, p2Selection);
+            Console.WriteLine("You:" + outcome);
+            gameCounter.AddResult(outcome);
+            Console.ReadLine();
         }
-    }
+}
+
 }

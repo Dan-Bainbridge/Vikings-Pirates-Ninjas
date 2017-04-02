@@ -12,7 +12,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Pirate, PlayGame.Pirate);
+            var result = game.GameOutcome(Selection.Pirate, Selection.Pirate);
             Assert.AreEqual(Outcome.Drew, result);
         }
 
@@ -21,7 +21,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Ninja, PlayGame.Ninja);
+            var result = game.GameOutcome(Selection.Ninja, Selection.Ninja);
             Assert.AreEqual(Outcome.Drew, result);
         }
 
@@ -30,7 +30,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Viking, PlayGame.Viking);
+            var result = game.GameOutcome(Selection.Viking, Selection.Viking);
             Assert.AreEqual(Outcome.Drew, result);
         }
 
@@ -39,7 +39,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Viking, PlayGame.Pirate);
+            var result = game.GameOutcome(Selection.Viking, Selection.Pirate);
             Assert.AreEqual(Outcome.Won, result);
         }
 
@@ -48,7 +48,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Pirate, PlayGame.Ninja);
+            var result = game.GameOutcome(Selection.Pirate, Selection.Ninja);
             Assert.AreEqual(Outcome.Won, result);
         }
 
@@ -57,7 +57,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Ninja, PlayGame.Viking);
+            var result = game.GameOutcome(Selection.Ninja, Selection.Viking);
             Assert.AreEqual(Outcome.Won, result);
         }
 
@@ -66,7 +66,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Pirate, PlayGame.Viking);
+            var result = game.GameOutcome(Selection.Pirate, Selection.Viking);
             Assert.AreEqual(Outcome.Lost, result);
         }
 
@@ -75,7 +75,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Ninja, PlayGame.Pirate);
+            var result = game.GameOutcome(Selection.Ninja, Selection.Pirate);
             Assert.AreEqual(Outcome.Lost, result);
         }
 
@@ -84,7 +84,7 @@ namespace VikingsPiratesNinjasTests
         {
             PlayGame game = new PlayGame();
 
-            var result = game.GameOutcome(PlayGame.Viking, PlayGame.Ninja);
+            var result = game.GameOutcome(Selection.Viking, Selection.Ninja);
             Assert.AreEqual(Outcome.Lost, result);
         }
     }

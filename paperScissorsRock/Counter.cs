@@ -8,35 +8,25 @@ namespace VikingsPiratesNinjas
 {
     public class Counter
     {
-        private int _numberOfLosses;
-        private int _numberOfTies;
+        public int NumberOfWins { get; private set; }
+        public int NumberOfLosses { get; private set; }
+        public int NumberOfTies { get; private set; }
 
-        public int NumberOfWons { get; private set; }
 
         public void AddResult(Outcome outcome)
         {
             switch (outcome)
             {
                 case Outcome.Won:
-                    NumberOfWons++;
+                    NumberOfWins++;
                     break;
                 case Outcome.Drew:
-                    _numberOfTies = _numberOfTies + 1;
+                    NumberOfTies++;
                     break;
                 case Outcome.Lost:
-                    _numberOfLosses = _numberOfLosses + 1;
+                    NumberOfLosses++;
                     break;
             }
-        }
-
-        public int GetDraws()
-        {
-            return _numberOfTies;
-        }
-
-        public int GetLoss()
-        {
-            return _numberOfLosses;
         }
     }
 }
