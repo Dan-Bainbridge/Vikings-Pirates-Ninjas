@@ -17,9 +17,9 @@ namespace VikingsPiratesNinjasTests
             Counter gameCounter = new Counter();
 
             gameCounter.AddResult(Outcome.Won);
-            Assert.AreEqual(1, gameCounter.NumberOfWons);
-            Assert.AreEqual(0, gameCounter.GetDraws());
-            Assert.AreEqual(0, gameCounter.GetLoss());
+            Assert.AreEqual(1, gameCounter.NumberOfWins);
+            Assert.AreEqual(0, gameCounter.NumberOfTies);
+            Assert.AreEqual(0, gameCounter.NumberOfLosses);
         }
 
         [TestMethod]
@@ -28,7 +28,20 @@ namespace VikingsPiratesNinjasTests
             Counter gameCounter = new Counter();
 
             gameCounter.AddResult(Outcome.Drew);
-            Assert.AreEqual(1, gameCounter.GetDraws());
+            Assert.AreEqual(0, gameCounter.NumberOfWins);
+            Assert.AreEqual(1, gameCounter.NumberOfTies);
+            Assert.AreEqual(0, gameCounter.NumberOfLosses);
+        }
+
+        [TestMethod]
+        public void TestForNumberOfLossesIncreasingWithWinOutcome()
+        {
+            Counter gameCounter = new Counter();
+
+            gameCounter.AddResult(Outcome.Lost);
+            Assert.AreEqual(0, gameCounter.NumberOfWins);
+            Assert.AreEqual(0, gameCounter.NumberOfTies);
+            Assert.AreEqual(1, gameCounter.NumberOfLosses);
         }
     }
 }

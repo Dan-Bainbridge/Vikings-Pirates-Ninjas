@@ -8,6 +8,14 @@ namespace VikingsPiratesNinjas
         Won,
         Lost
     }
+
+    public enum Selection
+    {
+        Viking,
+        Ninja,
+        Pirate,
+        Exit
+    }
     public class PlayGame
     {
         public const string Viking = "Viking";
@@ -15,73 +23,61 @@ namespace VikingsPiratesNinjas
         public const string Pirate = "Pirate";
         public const string Exit = "Exit";
 
-        public string UserSelection()
+        public Selection PlayerSelection()
         {
             string selection = Console.ReadLine();
 
             switch (selection)
             {
+                //Erm not sure about the case selects.
                 case Ninja:
-                    break;
+                    return Selection.Ninja;
                 case "n":
-                    selection = Ninja;
-                    break;
+                    return Selection.Ninja;
                 case Pirate:
-                    break;
+                    return Selection.Pirate;
                 case "p":
-                    selection = Pirate;
-                    break;
+                    return Selection.Pirate;
                 case Viking:
-                    break;
+                    return Selection.Viking;
                 case "v":
-                    selection = Viking;
-                    break;
+                    return Selection.Viking;
                 case "e":
-                    selection = Exit;
-                    break;
+                    return Selection.Exit;
                 case Exit:
-                    selection = Exit;
-                    break;
+                    return Selection.Exit;
                 default:
-                    break;
-
+                    return Selection.Viking;
             }
-            return selection;
         }
 
-        public string PcSelection()
+        public Selection PcSelection()
         {
             Random rnd = new Random();
             int choice = rnd.Next(1, 4);
 
-            string selection = Viking;
-
             switch (choice)
             {
                 case 1:
-                    selection = Pirate;
-                    break;
+                    return Selection.Pirate;
                 case 2:
-                    selection = Ninja;
-                    break;
+                    return Selection.Ninja;
                 case 3:
-                    selection = Viking;
-                    break;
+                    return Selection.Viking;
                 default:
-                    break;
+                    return Selection.Viking;
             }
-            return selection;
         }
-        public Outcome GameOutcome(string userSelection, string pcSelection)
+        public Outcome GameOutcome(Selection p1Selection, Selection p2Selection)
         {
 
-            if (userSelection == pcSelection)
+            if (p1Selection == p2Selection)
             {
                 return Outcome.Drew;
             }
-            if (userSelection == Ninja && pcSelection == Viking ||
-                userSelection == Viking && pcSelection == Pirate ||
-                userSelection == Pirate && pcSelection == Ninja)
+            if (p1Selection == Selection.Ninja && p2Selection == Selection.Viking ||
+                p1Selection == Selection.Viking && p2Selection == Selection.Pirate ||
+                p1Selection == Selection.Pirate && p2Selection == Selection.Ninja)
             {
                 return Outcome.Won;
             }
