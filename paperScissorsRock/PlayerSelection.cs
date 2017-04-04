@@ -2,6 +2,14 @@ using System;
 
 namespace VikingsPiratesNinjas
 {
+    public enum Selection
+    {
+        Viking,
+        Ninja,
+        Pirate,
+        Exit
+    }
+
     public class PlayerSelection
     {
         public Selection UserSelection()

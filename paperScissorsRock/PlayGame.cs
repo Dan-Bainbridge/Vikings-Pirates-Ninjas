@@ -9,19 +9,12 @@ namespace VikingsPiratesNinjas
         Lost
     }
 
-    public enum Selection
-    {
-        Viking,
-        Ninja,
-        Pirate,
-        Exit
-    }
     public class PlayGame
     {
         public const string Viking = "Viking";
         public const string Ninja = "Ninja";
         public const string Pirate = "Pirate";
-        public const string Exit = "Exit";
+        public const string Exit = "Exit";  
 
         public Outcome GameOutcome(Selection p1Selection, Selection p2Selection)
         {
