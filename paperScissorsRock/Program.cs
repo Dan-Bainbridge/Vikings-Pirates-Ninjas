@@ -11,18 +11,57 @@ namespace VikingsPiratesNinjas
             Console.WriteLine("Please enter Viking(v)/Ninja(n)/Pirate(p) or Exit \r\n");
 
             PlayGame game = new PlayGame();
+            PlayerSelection playerSelection = new PlayerSelection();
 
+            Console.WriteLine("Please press 1 to play a friend or 2 to play the CPU");
+            string player2 = Console.ReadLine();
+
+            if (player2 == "1")
+            {
+                TwoHumanGame(playerSelection, game, gameCounter);
+            }
+            else if (player2 == "2")
+            {
+                HumanVCPUGame(playerSelection, game, gameCounter);
+            }
+            else
+            {
+                Console.WriteLine("Didn't choose 1 or 2");
+            }
+        }
+
+        private static void TwoHumanGame(PlayerSelection playerSelection, PlayGame game, Counter gameCounter)
+        {
             Console.WriteLine("Please make a selection:");
 
-            Selection p1Selection = game.PlayerSelection();
-            Selection p2Selection = game.PcSelection();
-            Console.WriteLine("You have chosen: " + p1Selection);
-            Console.WriteLine("The pc chose: " + p2Selection);
+            Selection p1Selection = playerSelection.UserSelection();
+            Selection p2Selection = playerSelection.UserSelection();
+
+            Console.WriteLine("Player 1 chose: " + p1Selection);
+            Console.WriteLine("Player 2 chose: " + p2Selection);
+
             Outcome outcome = game.GameOutcome(p1Selection, p2Selection);
+
             Console.WriteLine("You:" + outcome);
             gameCounter.AddResult(outcome);
             Console.ReadLine();
         }
-}
 
+        private static void HumanVCPUGame(PlayerSelection playerSelection, PlayGame game, Counter gameCounter)
+        {
+            Console.WriteLine("Please make a selection:");
+
+            Selection p1Selection = playerSelection.UserSelection();
+            Selection p2Selection = playerSelection.PcSelection();
+
+            Console.WriteLine("Player 1 chose: " + p1Selection);
+            Console.WriteLine("Player 2 chose: " + p2Selection);
+
+            Outcome outcome = game.GameOutcome(p1Selection, p2Selection);
+
+            Console.WriteLine("You:" + outcome);
+            gameCounter.AddResult(outcome);
+            Console.ReadLine();
+        }
+    }
 }
