@@ -13,14 +13,14 @@ namespace VikingsPiratesNinjas
             PlayGame game = new PlayGame();
             PlayerSelection playerSelection = new PlayerSelection();
 
-            Console.WriteLine("Please press 1 to play a friend or 2 to play the CPU");
+            Console.WriteLine("Please press 1 for 1 player or 2 for 2 player");
             string player2 = Console.ReadLine();
 
-            if (player2 == "1")
+            if (player2 == "2")
             {
                 TwoHumanGame(playerSelection, game, gameCounter);
             }
-            else if (player2 == "2")
+            else if (player2 == "1")
             {
                 HumanVCPUGame(playerSelection, game, gameCounter);
             }
