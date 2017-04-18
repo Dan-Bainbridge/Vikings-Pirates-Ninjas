@@ -10,7 +10,7 @@ namespace VikingsPiratesNinjas
             Counter gameCounter = new Counter();
             Console.WriteLine("Please enter Viking(v)/Ninja(n)/Pirate(p) or Exit \r\n");
 
-            PlayGame game = new PlayGame();
+            Game game = new Game();
             PlayerSelection playerSelection = new PlayerSelection();
 
             Console.WriteLine("Please press 1 for 1 player or 2 for 2 player");
@@ -30,7 +30,7 @@ namespace VikingsPiratesNinjas
             }
         }
 
-        private static void TwoHumanGame(PlayerSelection playerSelection, PlayGame game, Counter gameCounter)
+        private static void TwoHumanGame(PlayerSelection playerSelection, Game game, Counter gameCounter)
         {
             while (true)
             {
@@ -48,7 +48,7 @@ namespace VikingsPiratesNinjas
                 Console.WriteLine("Player 1 chose: " + p1Selection);
                 Console.WriteLine("Player 2 chose: " + p2Selection);
                 
-                var outcome = game.GameOutcome(p1Selection, p2Selection);
+                var outcome = game.Play(p1Selection, p2Selection);
                 gameCounter.AddResult(outcome);
 
                 if (gameCounter.NumberOfWins > gameCounter.NumberOfLosses)
@@ -81,7 +81,7 @@ namespace VikingsPiratesNinjas
             Console.ReadLine();
         }
 
-        private static void HumanVCPUGame(PlayerSelection playerSelection, PlayGame game, Counter gameCounter)
+        private static void HumanVCPUGame(PlayerSelection playerSelection, Game game, Counter gameCounter)
         {
             Console.WriteLine("Please make a selection:");
 
@@ -91,7 +91,7 @@ namespace VikingsPiratesNinjas
             Console.WriteLine("Player 1 chose: " + p1Selection);
             Console.WriteLine("Player 2 chose: " + p2Selection);
 
-            Outcome outcome = game.GameOutcome(p1Selection, p2Selection);
+            Outcome outcome = game.Play(p1Selection, p2Selection);
 
             Console.WriteLine("You:" + outcome);
             gameCounter.AddResult(outcome);
