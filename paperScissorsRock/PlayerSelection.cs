@@ -19,21 +19,21 @@ namespace VikingsPiratesNinjas
             switch (selection)
             {
                 //Erm not sure about the case selects.
-                case PlayGame.Ninja:
+                case "Ninja":
                     return Selection.Ninja;
                 case "n":
                     return Selection.Ninja;
-                case PlayGame.Pirate:
+                case "Pirate":
                     return Selection.Pirate;
                 case "p":
                     return Selection.Pirate;
-                case PlayGame.Viking:
+                case "Viking":
                     return Selection.Viking;
                 case "v":
                     return Selection.Viking;
                 case "e":
                     return Selection.Exit;
-                case PlayGame.Exit:
+                case "Exit":
                     return Selection.Exit;
                 default:
                     return Selection.Viking;
