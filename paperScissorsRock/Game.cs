@@ -9,9 +9,9 @@ namespace VikingsPiratesNinjas
         Lost
     }
 
-    public class PlayGame
+    public class Game
     {
-        public Outcome GameOutcome(Selection p1Selection, Selection p2Selection)
+        public Outcome Play(Selection p1Selection, Selection p2Selection)
         {
 
             if (p1Selection == p2Selection)
