@@ -11,11 +11,6 @@ namespace VikingsPiratesNinjas
 
     public class PlayGame
     {
-        public const string Viking = "Viking";
-        public const string Ninja = "Ninja";
-        public const string Pirate = "Pirate";
-        public const string Exit = "Exit";  
-
         public Outcome GameOutcome(Selection p1Selection, Selection p2Selection)
         {
 
