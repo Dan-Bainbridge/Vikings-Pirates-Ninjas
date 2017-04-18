@@ -14,26 +14,18 @@ namespace VikingsPiratesNinjas
     {
         public Selection UserSelection()
         {
-            string selection = Console.ReadLine();
+            string selection = Console.ReadLine().ToLower();
 
-            switch (selection)
+            switch (selection[0])
             {
                 //Erm not sure about the case selects.
-                case "Ninja":
+                case 'n':
                     return Selection.Ninja;
-                case "n":
-                    return Selection.Ninja;
-                case "Pirate":
+                case 'p':
                     return Selection.Pirate;
-                case "p":
-                    return Selection.Pirate;
-                case "Viking":
+                case 'v':
                     return Selection.Viking;
-                case "v":
-                    return Selection.Viking;
-                case "e":
-                    return Selection.Exit;
-                case "Exit":
+                case 'e':
                     return Selection.Exit;
                 default:
                     return Selection.Viking;
