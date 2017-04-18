@@ -51,8 +51,32 @@ namespace VikingsPiratesNinjas
                 var outcome = game.GameOutcome(p1Selection, p2Selection);
                 gameCounter.AddResult(outcome);
 
-            Console.WriteLine("You:" + outcome);
-            gameCounter.AddResult(outcome);
+                if (gameCounter.NumberOfWins > gameCounter.NumberOfLosses)
+                {
+                    Console.WriteLine("Player 1 Wins");
+                }
+                else if (gameCounter.NumberOfLosses > gameCounter.NumberOfWins)
+                {
+                    Console.WriteLine("Player 2 Wins");
+                }
+                else
+                {
+                    Console.WriteLine("It was a draw!");
+                }
+               
+            }
+
+            if (gameCounter.NumberOfWins > gameCounter.NumberOfLosses)
+            {
+                Console.WriteLine("Player 1 destroyed player 2!");
+            }
+            else if (gameCounter.NumberOfLosses > gameCounter.NumberOfWins)
+            {
+                Console.WriteLine("Player 2 destroyed player 1!");
+            }
+            else
+            {
+                Console.WriteLine("Noone wins - It was a draw!");
             }
             Console.ReadLine();
         }
@@ -71,7 +95,7 @@ namespace VikingsPiratesNinjas
 
             Console.WriteLine("You:" + outcome);
             gameCounter.AddResult(outcome);
-            Console.ReadLine();
         }
     }
+
 }
