@@ -32,18 +32,28 @@ namespace VikingsPiratesNinjas
 
         private static void TwoHumanGame(PlayerSelection playerSelection, PlayGame game, Counter gameCounter)
         {
-            Console.WriteLine("Please make a selection:");
+            while (true)
+            {
 
-            Selection p1Selection = playerSelection.UserSelection();
-            Selection p2Selection = playerSelection.UserSelection();
+                Console.WriteLine("Player 1 Please make a selection:");
+                var p1Selection = playerSelection.UserSelection();
+                if (p1Selection == Selection.Exit)
+                    break;
 
-            Console.WriteLine("Player 1 chose: " + p1Selection);
-            Console.WriteLine("Player 2 chose: " + p2Selection);
+                Console.WriteLine("Player 2 Please make a selection:");
+                var p2Selection = playerSelection.UserSelection();
+                if (p2Selection == Selection.Exit)
+                    break;
 
-            Outcome outcome = game.GameOutcome(p1Selection, p2Selection);
+                Console.WriteLine("Player 1 chose: " + p1Selection);
+                Console.WriteLine("Player 2 chose: " + p2Selection);
+                
+                var outcome = game.GameOutcome(p1Selection, p2Selection);
+                gameCounter.AddResult(outcome);
 
             Console.WriteLine("You:" + outcome);
             gameCounter.AddResult(outcome);
+            }
             Console.ReadLine();
         }
 
